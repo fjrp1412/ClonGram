@@ -86,12 +86,19 @@ header .header__icons .icon {
 }
 
 header .header__icons .user {
-  background-image: url("../src/images/chiguire.jpeg");
   width: 45px;
   height: 45px;
   margin: 0 0 0 15px;
   border-radius: 25px;
   border: 2px solid black;
+}
+
+header .header__icons .user img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  object-position: center;
+  border-radius: 25px;
 }
 
 
@@ -120,14 +127,18 @@ header .header__icons .user {
   display: block;
   height: 45px;
   width: 45px;
-  background-image: url("../src/images/chiguire.jpeg");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
   border: 2px solid;
   border-radius: 25px;
-
 }
+
+.post-card__user-image .icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  object-position: center;
+  border-radius: 25px;
+}
+
 
 .post-card__user-image {
   margin: 25px 15px;
