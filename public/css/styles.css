@@ -80,6 +80,11 @@ header .header__icons .icon {
   background-image: url("../src/images/like.svg");
 }
 
+
+.post {
+  background-image: url("../src/images/plus-sign.svg");
+}
+
 header .header__icons .user {
   background-image: url("../src/images/chiguire.jpeg");
   width: 45px;
@@ -227,7 +232,7 @@ header .header__icons .user {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 442px;
+  /* height: 442px; */
   width: 336px;
   margin-top: 110px;
   border: 1px solid black;
@@ -270,26 +275,29 @@ header .header__icons .user {
 
 
 .form-container button {
-  margin-top: 70px;
+  margin-top: 30px;
+  margin-bottom: 25px;
   width: calc(100% - 40px);
   align-self: center;
   border-radius: 25px;
   background-color: var(--blue);
   color: white;
   font-weight: bold;
+  height: 25px;
 }
 
-.hero-form .sign-up{
+.form-container .sign-up{
   margin-top: 15px;
   font-size: 1.6rem;
-  font-weight: bold
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.hero-form .sign-up span {
+.form-containr .sign-up span {
   margin: 0px 5px 0px 5px;
 }
 
-.hero-form .sign-up a span{
+.form-container .sign-up a span{
   color: var(--blue);
 }
 
