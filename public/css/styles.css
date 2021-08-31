@@ -58,6 +58,7 @@ header .header__icons .icon {
   background-position: center;
 }
 
+
 .home {
   background-image: url("../src/images/home-icon (1).svg");
 
@@ -77,8 +78,9 @@ header .header__icons .user {
   height: 45px;
   margin: 0 0 0 15px;
   border-radius: 25px;
-  border: 2px solid;
+  border: 2px solid black;
 }
+
 
 .posts {
   width: calc(100% - 500px);
@@ -118,6 +120,11 @@ header .header__icons .user {
   margin: 25px 15px;
 }
 
+.post-card__user-image a {
+  text-decoration: none;
+  color: black;
+}
+
 .post-card__username {
   font-size: 1.6rem;
   font-weight: bold;
@@ -129,9 +136,78 @@ header .header__icons .user {
   max-width: 500px;
 }
 
-
 .post-card .post-card__image img {
   width: 500px;
   height: 100%;
+}
+
+.user-container {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 300px);
+  max-width: 950px;
+  align-items: center;
+}
+
+.user-container .user__header {
+  width: 100%;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(0,0,0,0.36);
+}
+
+.user__header .user__image {
+  margin: 5px 45px 55px 45px;
+  border-radius: 50%;
+  width: 180px;
+  height: 150px;
+}
+
+.user__header .user__image img {
+  width: 180px;
+  height: 150px;
+  object-fit: fill;
+  border-radius: 50%;
+}
+
+.user__header .user__details {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.user__header .user__details h2 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.user__header .user__details a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.user__images-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  margin-top: 20px;
+  grid-auto-flow: row;
+}
+
+.user__images-gallery .image-container {
+  width: 100%;
+  height: 100%;
+}
+
+.user__images-galler .image-container img {
+  object-fit: fill;
+  object-position: center;
+  width: 250;
+  height: 200;
 }
 
