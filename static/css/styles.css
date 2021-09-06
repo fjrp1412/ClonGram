@@ -215,6 +215,7 @@ header .header__icons .user img {
   font-weight: bold;
 }
 
+
 .user__images-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -225,14 +226,14 @@ header .header__icons .user img {
 
 .user__images-gallery .image-container {
   width: 100%;
-  height: 100%;
+  height: 300px;
 }
 
-.user__images-galler .image-container img {
+.user__images-gallery .image-container img {
   object-fit: fill;
   object-position: center;
-  width: 250;
-  height: 200;
+  width: 100%;
+  height: 100%;
 }
 
 .hero-form {
