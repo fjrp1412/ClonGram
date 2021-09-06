@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block container %}
+<article class="hero-form">
+  <div class="form-container">
+    <div class="form__title">
+      <h1>ClonGram</h1>
+    </div>
+
+    <form action="{% url 'users:login' %}" method="post">
+      {% csrf_token %}
+      <div class="form-container__input">
+	<label for="username">Username</label>
+	<input type="" name="username" id="username" placeholder="Username">
+      </div>
+
+      <div class="form-container__input">
+	<label for="password">Password</label>
+	<input type="" name="password" id="password" placeholder="Password">
+      </div>
+
+      <button type="submit">Sign in</button>
+    </form>
+    <div class="sign-up">
+      <span>Don't have an account?</span>
+      <a href="./sign-up.html">
+	<span>Sign up</span>
+      </a>
+    </div>
+  </div>
+</article>
+{% endblock %}
