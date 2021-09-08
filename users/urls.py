@@ -15,6 +15,13 @@ urlpatterns = [
     ),
 
     path(
+        route="signup/",
+        view=views.SignUpView.as_view(),
+        name="signup"
+
+    ),
+
+    path(
         route="<str:username>/",
         view=views.UserDetailView.as_view(),
         name="detail"

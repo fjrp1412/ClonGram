@@ -1,54 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta viewport="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/styles.css">
-    <title>ClonGram</title>
-  </head>
-  <body>
+{% extends "base.html" %}
+{% block container %}
+<article class="hero-form">
+  <div class="form-container">
+    <div class="form__title">
+      <h1>ClonGram</h1>
+    </div>
 
-    <article class="hero-form">
-      <div class="form-container">
-	<div class="form__title">
-	  <h1>ClonGram</h1>
-	</div>
-
-	<form action="">
-	  <div class="form-container__input">
-	    <label for="username">Username</label>
-	    <input type="" name="username" id="username" placeholder="Username">
-	  </div>
-
-
-	  <div class="form-container__input">
-	    <label for="email">Email</label>
-	    <input type="" name="emai" id="emai" placeholder="Email">
-	  </div>
-
-	  <div class="form-container__input">
-	    <label for="password">Password</label>
-	    <input type="" name="password" id="password" placeholder="Password">
-	  </div>
-
-	  <div class="form-container__input">
-	    <label for="repeat-password">Repeat Password</label>
-	    <input type="" name="username" id="username" placeholder="Username">
-	  </div>
-
-	  <button type="submit">Sign up</button>
-	</form>
-
-	<div class="sign-up">
-	  <span>Already have a account?</span>
-	  <a href="./login.html">
-	    <span>Login</span>
-	  </a>
-	</div>
+    <form action="{% url 'users:signup'}" method="post">
+      {% csrf_token %}
+      <div class="form-container__input">
+	<label for="username">Username</label>
+	<input type="" name="username" id="username" placeholder="Username">
       </div>
 
-    </article>
 
+      <div class="form-container__input">
+	<label for="email">Email</label>
+	<input type="" name="email" id="emai" placeholder="Email">
+      </div>
 
-  </body>
-</html>
+      <div class="form-container__input">
+	<label for="password">Password</label>
+	<input type="" name="password" id="password" placeholder="Password">
+      </div>
+
+      <div class="form-container__input">
+	<label for="repeat_password">Repeat Password</label>
+	<input type="" name="password_confirmation" placeholder="Repeat Password">
+      </div>
+
+      <div class="form-container__input">
+	<label for="user_image">User image</label>
+	<input type="file" name="user_image" placeholder="user_image">
+      </div>
+
+      <button type="submit">Sign up</button>
+    </form>
+
+    <div class="sign-up">
+      <span>Already have a account?</span>
+      <a href="{% url 'users:login' %}">
+	<span>Login</span>
+      </a>
+    </div>
+  </div>
+
+</article>
+{% endblock %}

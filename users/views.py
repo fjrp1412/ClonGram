@@ -1,9 +1,15 @@
+# Django imports
 from django.shortcuts import render
 from django.contrib.auth import views as auth_views
 from django.views.generic import DetailView
+from django.views.generic.edit import FormView
 from django.contrib.auth.models import User
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
+
+# Local imports
 from posts.models import Posts
-# Create your views here.
+from users.forms import SignUpForm
 
 
 class LoginView(auth_views.LoginView):
@@ -11,10 +17,12 @@ class LoginView(auth_views.LoginView):
 
     redirect_authenticated_user = True
 
+
 class LogoutView (auth_views.LogoutView):
     pass
 
-class UserDetailView(DetailView):
+
+class UserDetailView(LoginRequiredMixin,DetailView):
     template_name = "users/user.html"
     slug_field = "username"
     slug_url_kwarg = "username"
@@ -25,6 +33,17 @@ class UserDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         user = self.get_object()
-        context["posts"] = Posts.objects.filter(user_id=user).order_by("-created")
+        context["posts"] = Posts.objects.filter(
+            user_id=user).order_by("-created")
         return context
-    
+
+
+class SignUpView(FormView):
+    template_name = "users/sign-up.html"
+    form_class = SignUpForm
+    success_url = reverse_lazy("users:login")
+
+    def form_valid(self, form):
+        print(form)
+        form.save()
+        return super().form_valid(form)
