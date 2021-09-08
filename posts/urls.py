@@ -9,5 +9,11 @@ urlpatterns = [
         route="posts/",
         view=views.PostsFeedView.as_view(),
         name="feed"
+    ),
+    path(
+        route="new/",
+        view=views.CreatePostView.as_view(),
+        name="create"
     )
+
 ]

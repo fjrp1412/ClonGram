@@ -1,0 +1,11 @@
+<header>
+  <div class="header__title"> <a href="{% url 'posts:feed' %}"><h2>ClonGram</h2></a> </div>
+  <div class="header__icons">
+    <a class="icon post" href="{% url 'posts:create' %}"></a>
+    <a class="icon home" href="{% url 'posts:feed' %}"></a>
+    <span class="icon search"></span>
+    <span class="icon like"></span>
+    <a class="icon user" href="{% url 'users:detail' request.user.username%}"><img src="{{ request.user.profile.image.url }}" alt=""></a>
+    <a class="icon logout" href="{% url 'users:logout' %}"></a>
+  </div>
+</header>

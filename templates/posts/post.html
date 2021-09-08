@@ -1,40 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta viewport="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/styles.css">
-    <title>ClonGram</title>
-  </head>
-  <body>
-    <header>
-      <div class="header__title"> <a href="../index.html"><h2>ClonGram</h2></a> </div>
-      <div class="header__icons">
-	<a class="icon post" href="./post.html"></a>
-	<a class="icon home" href="../index.html"></a>
-	<span class="icon search"></span>
-	<span class="icon like"></span>
-	<a class="icon user" href="./user.html"><img src="../src/images/chiguire.jpeg" alt=""></a>
+{% extends "base.html" %}
+{% block container %}
+{% include "header.html" %}
+<article class="hero-form">
+  <div class="form-container">
+    <div class="form__title">
+      <h1>ClonGram</h1>
+    </div>
+
+    <form action="{%url 'posts:create' %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="form-container__input">
+	<input  type="hidden" name="user_id" value={{ user.pk }} >
+	<input  type="hidden" name="profile_id" value={{ profile.pk }} >
+	<label for="title">Title</label>
+	<input type="text" name="title" id="title" placeholder="title">
       </div>
-    </header>
-    <article class="hero-form">
-      <div class="form-container">
-	<div class="form__title">
-	  <h1>ClonGram</h1>
+	<div class="form-container__input">
+	  <label for="image">Image</label>
+	  <input type="file" name="image" id="image" placeholder="image">
 	</div>
+	<button type="submit">Submnit</button>
+    </form>
+  </div>
 
-	<form action="">
-	  <div class="form-container__input">
-	    <label for="image">Image</label>
-	    <input type="file" name="image" id="image" placeholder="image">
-	  </div>
+</article>
 
-	  <button type="submit">Submnit</button>
-	</form>
-      </div>
-
-    </article>
-
-
-  </body>
-</html>
+{% endblock %}

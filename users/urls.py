@@ -9,11 +9,31 @@ urlpatterns = [
     ),
 
     path(
+        route="logout/",
+        view=views.LogoutView.as_view(),
+        name="logout"
+    ),
+
+    path(
+        route="signup/",
+        view=views.SignUpView.as_view(),
+        name="signup"
+
+    ),
+
+    path(
+        route="update/",
+        view=views.UpdateProfileView.as_view(),
+        name="update"
+    ),
+
+    path(
         route="<str:username>/",
         view=views.UserDetailView.as_view(),
         name="detail"
 
-    )
+    ),
+
 
 
 ]
