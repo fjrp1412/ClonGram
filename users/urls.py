@@ -9,11 +9,17 @@ urlpatterns = [
     ),
 
     path(
+        route="logout/",
+        view=views.LogoutView.as_view(),
+        name="logout"
+    ),
+
+    path(
         route="<str:username>/",
         view=views.UserDetailView.as_view(),
         name="detail"
 
-    )
+    ),
 
 
 ]

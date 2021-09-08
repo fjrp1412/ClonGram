@@ -1,16 +1,7 @@
 {% extends "base.html" %}
 
 {% block container %}
-<header>
-  <div class="header__title"> <a href="../index.html"><h2>ClonGram</h2></a> </div>
-  <div class="header__icons">
-    <a class="icon post" href="./html/post.html"></a>
-    <a class="icon home" href="./"></a>
-    <span class="icon search"></span>
-    <span class="icon like"></span>
-    <a class="icon user" href="{%url 'users:detail' request.user.username%}"><img src="./src/images/chiguire.jpeg" alt=""></a>
-  </div>
-</header>
+{% include "header.html" %}
 <main class="hero">
 
   <article class="user-container">
