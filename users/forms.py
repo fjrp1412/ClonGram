@@ -67,3 +67,4 @@ class SignUpForm(forms.Form):
         user = User.objects.create_user(**data)
         profile = Profile(user=user, image=image)
         profile.save()
+
